@@ -1,0 +1,42 @@
+
+    <a href="#!/home">Retour aux articles</a></br>
+    
+    <a href="#!/articles">Articles-Comments</a></br>
+
+    {{chiffre | round:5}}
+    <br>
+        <input type="text" class="datepicker" options-Date="{today: 'Aujourdhui'}" >
+    <br>
+    <input type="text" ng-model="query">
+    <select ng-model="order">
+        <option value="username">Alphabetique</option>
+        <option value="city">City</option>
+        <option value="email">Gender</option>
+        <option value="content">Age</option>
+    </select>
+
+    <select ng-model="orderSense">
+        <option value="-">Decroissant</option>
+        <option value="+">Croissant</option>
+    </select>
+    
+    <h1>Article: {{tilte}}</h1>
+        
+    <!-- <div ng-test username="comments[0].username">     -->
+        <div ng-repeat="comment in comments | filter: query | orderBy: orderSense+order">
+
+            <ng-comment comment="comment" select="selectComment()"></ng-comment>
+
+        </div>
+    <!-- </div> -->
+    <!-- <ng-time></ng-time> -->
+
+    <form ng-submit="addComment()">
+        <input type="text" placeholder="Username..." ng-model="newComment.username"><br>
+        <input type="text" placeholder="City..." ng-model="newComment.city"><br>
+        <input type="text" placeholder="Email..." ng-model="newComment.email"><br>
+        <textarea ng-model="newComment.content"></textarea><br>
+        <input type="submit" value="Envoyer">
+    </form>
+
+    

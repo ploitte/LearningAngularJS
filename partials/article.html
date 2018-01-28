@@ -1,0 +1,37 @@
+
+
+{{testPost}}
+{{testComment}}
+
+
+<ng-tabs>
+
+    <div ng-repeat="post in posts">
+
+        <h1>{{post.name}}</h1>
+    
+        <p>
+            {{post.content}}
+        <p>
+    
+        <h4>Nombre de commentaires: {{post.comments.length}}</h4>
+    
+        <p>
+            <a ng-href="#!/comments/{{post.id}}">Voir les commentaires</a>
+        </p>
+        
+    
+        <hr>
+    
+    </div>
+
+        <div ng-repeat="comment in comments | filter: query | orderBy: orderSense+order">
+
+            <ng-comment comment="comment" select="selectComment()"></ng-comment>
+        
+        </div>
+
+</ng-tabs>
+
+
+

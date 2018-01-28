@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plugins/pickadate/themes/classic.css">
+    <link rel="stylesheet" href="plugins/pickadate/themes/classic.date.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJsGrafikart</title>
+</head>
+<body>
+
+    <h1 ng-show="loading">Chargement...</h1>
+
+    <div ng-view></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="plugins/pickadate/picker.js"></script>
+<script src="plugins/pickadate/picker.date.js"></script>
+<script src="js/app.js"></script>
+<script src="js/service/post.js"></script>
+<script src="js/controller/post.js"></script>
+<script src="js/controller/comments.js"></script>
+<script src="js/directive/comment.js"></script>
+
+</body>
+</html>
